@@ -28,6 +28,8 @@ const Game = function(key, options){
     
     this.__buildBoard();
     this.__buildPlayers();
+
+    Game.games[key] = this;
 };
 
 utils.inherits(Game, EventEmitter);
@@ -39,5 +41,7 @@ Game.prototype.__buildBoard = function(){
 Game.prototype.__buildPlayers = function(){
 
 };
+
+Game.games = {};
 
 module.exports = Game;
